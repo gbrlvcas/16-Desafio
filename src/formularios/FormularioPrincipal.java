@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -111,12 +113,57 @@ public class FormularioPrincipal {
 				//Mostrar os produtos
 				tabela.setModel(a.listarProdutos());
 				
-				
-				
-				
 			}
 		});
 		
+		
+		//Ação - Clique na tabela
+		tabela.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				
+				//Obter a linha
+				int linha = tabela.getSelectedRow();
+				
+				//Obter os dados
+				String nomeProduto = tabela.getValueAt(linha,0).toString();
+				double valorProduto = Double.parseDouble(tabela.getValueAt(linha, 1).toString());
+				int quantidadeProduto = Integer.parseInt(tabela.getValueAt(linha, 2).toString());
+				
+				//Criando o formulario de alteração
+				FormularioAlteracao FA = new FormularioAlteracao(nomeProduto, valorProduto, quantidadeProduto);
+				
+				//Fechar formulario principal
+				cxPrincipal.dispose();
+
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		
 		
@@ -126,7 +173,7 @@ public class FormularioPrincipal {
 		JLabel BG = new JLabel(new ImageIcon("C:\\Users\\104969\\Desktop\\Trabalho Programador\\16 - Desafio\\src\\formularios\\BG.gif"));
 		BG.setBounds(0, 10, 420, 500);
 		
-		//Adicionando ao componente
+		//Composições da caixa
 		
 			//Produto
 			cxPrincipal.add(lblProduto);

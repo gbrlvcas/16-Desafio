@@ -2,6 +2,9 @@ package controladores;
 
 import javax.swing.table.DefaultTableModel;
 
+import formularios.FormularioAlteracao;
+import formularios.FormularioPrincipal;
+
 public class Acao {
 
 	
@@ -42,9 +45,15 @@ public class Acao {
 			//Retornar
 			return modelo;
 		
+		
+	}
+	
+	//Método para alterar o produto
+	public void alterarProduto(String alterarNome, double alterarValor, int alterarQuantidade) {
+		
 			
 		
-	
+		
 		
 	}
 }
