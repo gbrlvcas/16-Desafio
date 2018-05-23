@@ -49,11 +49,23 @@ public class Acao {
 	}
 	
 	//Método para alterar o produto
-	public void alterarProduto(String alterarNome, double alterarValor, int alterarQuantidade) {
+	public void alterarProduto(String alterarNome, double alterarValor, int alterarQuantidade, int linha) {
 		
-			
+		//Criando objeto e atribuindo dados
+		Produto p = new Produto();
 		
+		p.nomeProduto = alterarNome;
+		p.valorProduto = alterarValor;
+		p.quantidadeProduto = alterarQuantidade;
 		
+		//Alterando os valores
+		Produto.registrarProduto.set(linha, p);
+
+	}
+	
+	//Método pra excluir a linha do produto
+	public void ExcluirProduto(int linha){
 		
+		Produto.registrarProduto.remove(linha);
 	}
 }

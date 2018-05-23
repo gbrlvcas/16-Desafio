@@ -132,7 +132,7 @@ public class FormularioPrincipal {
 				int quantidadeProduto = Integer.parseInt(tabela.getValueAt(linha, 2).toString());
 				
 				//Criando o formulario de alteração
-				FormularioAlteracao FA = new FormularioAlteracao(nomeProduto, valorProduto, quantidadeProduto);
+				FormularioAlteracao FA = new FormularioAlteracao(nomeProduto, valorProduto, quantidadeProduto, linha);
 				
 				//Fechar formulario principal
 				cxPrincipal.dispose();
